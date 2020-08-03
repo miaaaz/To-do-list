@@ -105,3 +105,6 @@ dist
 
 # Private keys
 keys.js
+
+.DS_Store
+npm-debug.log

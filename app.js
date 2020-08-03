@@ -6,6 +6,11 @@ const keys = require("./config/keys");
 
 const app = express();
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 3000;
+}
+
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -56,7 +61,7 @@ app.get('/about', (req, res) => {
     res.render('about');
 });
 
-app.listen(3000, () => {
-    console.log("Start listening on port 3000");
+app.listen(port, () => {
+    console.log("Start listening");
     
 });
